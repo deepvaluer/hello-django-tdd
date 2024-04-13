@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post.title }} - Blog</title>
+    <link rel="stylesheet" href="{%static 'blog/bootstrap/bootstrap.min.css' %}" media="screen">
+    <link rel="stylesheet" href="{%static 'blog/css/blog-post.css' %}" media="screen">
+
+
+</head>
+<body>
+    <nav>
+        <a href="/blog/">Blog</a>
+    </nav>
+    <div class="col-lg-8">
+        <h1 class="mt-4">{{ post.title }}</h1>
+        <p class="lead">
+            by
+            <a href="#"> 작성자명 쓸 위치 </a>
+        </p>
+        <hr>
+        <p>Posted on {{ post.create_at }}</p>
+        <hr>
+        <img class="img-fluid rounded" src="{{ post.head_image.url }}" alt="">
+        <hr>
+        <p>{{ post.content }}</p>
+        <hr>
+    </div>
+</body>
+</html>

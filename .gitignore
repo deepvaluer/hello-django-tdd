@@ -1,4 +1,6 @@
 .venv
 .idea
+_media
+.DS_Store
 
 db.sqlite3
