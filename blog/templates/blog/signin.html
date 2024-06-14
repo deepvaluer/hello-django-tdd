@@ -1,0 +1,35 @@
+{% extends 'blog/base_full_width.html' %}
+{% load crispy_forms_tags %}
+{% block head_title %}Login{% endblock %}
+
+{% block main_area %}
+
+    <div class="container">
+        <div class="wrap">
+            <h2 class="title-center"> 로그인</h2>
+            <form class="form-area" method="post"  action="/blog/sign-in/">
+                {% csrf_token %}
+                {% include "blog/form_errors.html" %}
+                <div class="form-group mt-2 mb-2">
+                    <label for="username">이름</label>
+                    <input type="text" class="form-control" id="username" name="username"
+                        value="{{ form.username.value|default_if_none:'' }}">
+                </div>
+                <div class="form-group mt-2 mb-2">
+                    <label for="password">비밀번호</label>
+                    <input type="password" class="form-control" id="password" name="password"
+                        value="{{ form.password.value|default_if_none:'' }}">
+                </div>
+                <hr>
+                <div style="float: right">
+                    <button type="submit" class="btn btn-primary">로그인</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block content %}
+{% endblock %}
